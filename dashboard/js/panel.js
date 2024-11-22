@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const response = await fetch(
-                `https://my-backend-3204uuvj5-lshadowfxs-projects.vercel.app/get-servers?token=${token}`
+                `https://my-backend-git-main-lshadowfxs-projects.vercel.app/get-servers?token=${token}`
             );
 
             if (!response.ok) {
@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             serverListDiv.style.display = 'block';
         } catch (error) {
             console.error('Error al obtener los servidores:', error);
+            alert('Hubo un problema al obtener los servidores. Por favor, intenta nuevamente más tarde.');
         }
     }
 
