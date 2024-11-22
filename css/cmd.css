@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #333, #000);
+}
+
+#main {
+    height: 800px;
+    display: flex;
+    justify-content: center;
+}
+
+.comming_soon {
+    color: #fff;
+    font-size: 40px;
+    font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 200px;
+    text-shadow: 5px 10px 10px #000;
+}
