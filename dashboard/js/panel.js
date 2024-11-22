@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para obtener el token de la URL
     function getTokenFromUrl() {
         const params = new URLSearchParams(window.location.hash.replace('#', '?'));
-        return params.get('access_token');
+        const token = params.get('access_token');
+        console.log(`Token extraido: ${token}`);
+        return token;
     }
 
     // Función para obtener servidores desde el backend
