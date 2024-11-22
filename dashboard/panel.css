@@ -19,7 +19,7 @@ header .encabezado ul a:hover {
 }
 
 main {
-    padding: 20px;
+    padding: 195px;
     text-align: top center;
 }
 
@@ -39,7 +39,7 @@ button.btn {
 button.btn:hover {
     background-color: #1e1e2f;
     color: #00ffff;
-    border: 1px solid #00ffff;
+    border: 0.5px solid #00ffff;
 }
 
 .server-list {
