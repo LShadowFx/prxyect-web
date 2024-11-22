@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Configuración de OAuth2
     const CLIENT_ID = '1095478254049177741';
     const REDIRECT_URI = 'https://lshadowfx.github.io/prxyect-web/dashboard/panel.html';
-    const API_BASE = 'https://discord.com/api/oauth2/authorize';    
+    const API_BASE = 'https://discord.com/api/oauth2/authorize';
     const SCOPE = 'identify guilds';
     const RESPONSE_TYPE = 'token';
 
@@ -24,26 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return params.get('access_token');
     }
 
-    // Funcion para conectar con el backend
-    async function fetchServer() {
-        const token = getTokenFromUrl();
-
-        if (!token) {
-            alert('Token no encontrado. Asegúrate de haber iniciado sesión correctamente.');
-            return;
-        }
-
-            try {
-                const response = await fetch(`https://my-backend-3204uuvj5-lshadowfxs-projects.vercel.app/get-servers?token=${token}`);
-                const servers = await response.json();
-
-                console.log(`Servidores: ${servers}`)
-            } catch(e) {
-                console.log(e)
-            }
-    }
-
-    // Función para cargar servidores desde el backend
+    // Función para obtener servidores desde el backend
     async function fetchServers() {
         const token = getTokenFromUrl();
 
@@ -53,8 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            // Llamada al backend para obtener los servidores
-            const response = await fetch(`https://lshadowfx.github.io/prxyect-web/get-servers?token=${token}`);
+            const response = await fetch(
+                `https://my-backend-3204uuvj5-lshadowfxs-projects.vercel.app/get-servers?token=${token}`
+            );
+
+            if (!response.ok) {
+                throw new Error(`Error en la respuesta del servidor: ${response.status}`);
+            }
+
             const servers = await response.json();
 
             serversUl.innerHTML = ''; // Limpiar lista previa
