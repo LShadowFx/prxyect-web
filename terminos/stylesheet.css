@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(#000, #ccc); /* Fondo html */
+    color: #fff; /* Texto blanco */
+}
+
+header {
+    overflow: hidden;
+}
+
+h1 {
+    color: #e01717;
+    text-shadow: 2px 1px 3px;
+}
+
+h4 {
+    position: relative;
+    bottom: 12;
+    left: 69;
+    color: #f446;
+}
+
+a {
+    color: #00d1a1;
+}
+
+a:hover {
+    color: #b00;
+    transition: 2s;
+}
+
+h3 {
+    color: #E6E6E6;
+    border-bottom: 3px solid #902; /* Línea separadora rojo oscuro */
+    padding-bottom: 10px;
+    margin-top: 20px;
+    text-shadow: 2px 2px 2px #333;
+    cursor: pointer;
+}
+
+.main_text {
+    font-family: sans-serif;
+    color: #fff;
+    display: none;
+}
+
+strong {
+    text-shadow: 1px 1px 4px #666;
+}
+.Terminos_y_condiciones {
+    max-width: 800px;
+    text-align: left;
+    box-shadow: #000;
+    border: 2px solid;
+    border-color: #000;
+    background-color: #111;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #501;
+    border-radius: 10px;
+    margin-bottom: 90px;
+}
+
+.Terminos_y_condiciones_title {
+    font-size: large;
+    font-family:sans-serif;
+}
+
+.dashboard {
+    position: relative;
+    left: 67%;
+    font-size: 17px;
+}
+
+img {
+    width: 50px;
+    border-radius: 50%;
+    float: left;
+    margin: 20px 20px;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 20px #802; /*sombreado*/
+    border-radius: 10px;
+    text-align: left;
+    color: #333;
+    border-color: #111;
+    border: 2px solid;
+    background-color: #111; /*color dentro de la box*/
+}
+
+li {
+    color: #F2F2F2;
+    text-shadow: 0px 0px 6px;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #F2F2F2;
+}
