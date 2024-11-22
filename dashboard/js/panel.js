@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Configuración de OAuth2
     const CLIENT_ID = '1095478254049177741';
-    const REDIRECT_URI = 'http://localhost:3000/callback';
+    const REDIRECT_URI = 'https://lshadowfx.github.io/prxyect-web/callback';
     const API_BASE = 'https://discord.com/api/oauth2/authorize';
     const SCOPE = 'identify guilds';
     const RESPONSE_TYPE = 'token';
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Llamada al backend para obtener los servidores
-            const response = await fetch(`http://localhost:3000/get-servers?token=${token}`);
+            const response = await fetch(`https://lshadowfx.github.io/prxyect-web/get-servers?token=${token}`);
             const servers = await response.json();
 
             serversUl.innerHTML = ''; // Limpiar lista previa
