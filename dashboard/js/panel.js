@@ -42,6 +42,6 @@ if (token) {
     document.getElementById('login-discord').style.display = 'block';
 
     document.getElementById('login-discord').addEventListener('click', function() {
-        window.location.href = 'https://discord.com/oauth2/authorize?client_id=1095478254049177741&response_type=code&redirect_uri=https%3A%2F%2Fmy-backend-lshadowfx-lshadowfxs-projects.vercel.app%2Flogin&scope=identify+guilds';
+        window.location.href = 'https://lproyect-sv.vercel.app/login';
     });
 }
