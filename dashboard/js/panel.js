@@ -7,6 +7,7 @@ const token = urlParms.get('token');
 
 if (token) {
     document.getElementById('login-discord').style.display = 'none';
+    document.getElementById('login-message').style.display = 'none';
 
     // Fetch para obtener datos del usuario
     fetch('https://discord.com/api/v10/users/@me', {
@@ -36,15 +37,15 @@ if (token) {
     })
     .then(response => response.json())
     .then(guilds => {
-        // Mostrar lista de servidores
-        const guildListElement = document.getElementById('guilds-list');
+        // Mostrar lista de servidores en un menú desplegable
+        const serverSelect = document.getElementById('server-select');
         guilds.forEach(guild => {
-            const listItem = document.createElement('li');
-            listItem.classList.add('guild-item');
-            listItem.innerText = guild.name;
-            guildListElement.appendChild(listItem);
+            const option = document.createElement('option');
+            option.value = guild.id;
+            option.textContent = guild.name;
+            serverSelect.appendChild(option);
         });
-        document.getElementById('server-list').style.display = 'block';
+        document.getElementById('server-list-container').style.display = 'block';
     })
     .catch(error => {
         console.error('Error al obtener los servidores:', error);

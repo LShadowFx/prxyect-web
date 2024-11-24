@@ -32,11 +32,12 @@
                 <img id="user-avatar" class="user-avatar" alt="Avatar del usuario">
                 <h2 id="user-welcome"></h2>
             </div>
-            <p class="login-discord">Inicia sesión con Discord antes de continuar.</p>
+            <p id="login-message" class="login-discord">Inicia sesión con Discord antes de continuar.</p>
             <button id="login-discord" class="btn">Iniciar sesión con Discord</button>
     
-            <div id="server-list" style="display: none;">
-                <ul id="guilds-list"></ul>
+            <div id="server-list-container" style="display: none;">
+                <h2>Tus servidores</h2>
+                <select id="server-select" class="server-dropdown"></select>
             </div>
     
             <div id="server-options" style="display: none;">
