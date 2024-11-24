@@ -1,6 +1,6 @@
 document.getElementById('login-discord').addEventListener('click', function() {
     
-    window.location.href = 'https://lproyect-sv.vercel.app/login';
+    window.location.href = 'https://discord.com/oauth2/authorize?client_id=1095478254049177741&response_type=code&redirect_uri=https%3A%2F%2Flproyect-sv.vercel.app%2Flogin&scope=identify+guilds';
 });
 
 const urlParms = new URLSearchParams(window.location.search);
@@ -25,10 +25,6 @@ if (token) {
             listItem.classList.add('guild-item');
             listItem.innerText = guild.name;
 
-            // Aquí puedes agregar más información como una imagen del servidor
-            // listItem.innerHTML = `<img src="${guild.icon_url}" alt="${guild.name}">${guild.name}`;
-
-            // Agregar el item al <ul>
             guildListElement.appendChild(listItem);
         });
     })
@@ -42,6 +38,6 @@ if (token) {
     document.getElementById('login-discord').style.display = 'block';
 
     document.getElementById('login-discord').addEventListener('click', function() {
-        window.location.href = 'https://lproyect-sv.vercel.app/login';
+        window.location.href = 'https://discord.com/oauth2/authorize?client_id=1095478254049177741&response_type=code&redirect_uri=https%3A%2F%2Flproyect-sv.vercel.app%2Flogin&scope=identify+guilds';
     });
 }
