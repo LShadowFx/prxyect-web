@@ -6,7 +6,8 @@ const urlParms = new URLSearchParams(window.location.search);
 const token = urlParms.get('token');
 
 if (token) {
-    
+
+    // Ocultar datos despues de obtener token
     document.getElementById('login-discord').style.display = 'none';
     document.getElementById('login-message').style.display = 'none';
 
@@ -51,7 +52,8 @@ if (token) {
         
         // Muestra la información
         document.getElementById('user-info').style.display = 'block';
-        document.getElementById('server-list-container').style.display = 'block';
+        document.getElementById('server-select').style.display = 'block';
+        
     })
     .catch(error => {
         console.error('Error al obtener los servidores:', error);
