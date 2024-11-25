@@ -10,6 +10,7 @@ if (token) {
     // Ocultar datos despues de obtener token
     document.getElementById('login-discord').style.display = 'none';
     document.getElementById('login-message').style.display = 'none';
+    
 
     // Fetch para obtener datos del usuario
     fetch('https://discord.com/api/v10/users/@me', {
@@ -53,6 +54,7 @@ if (token) {
         // Muestra la información
         document.getElementById('user-info').style.display = 'block';
         document.getElementById('server-select').style.display = 'block';
+
         
     })
     .catch(error => {
