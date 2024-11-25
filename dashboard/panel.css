@@ -9,6 +9,11 @@ body {
     height: 800px;
 }
 
+.encabezadao {
+    display: flex;
+    flex-direction: row;
+}
+
 header {
     background-color: #2c2c44;
 }
@@ -16,6 +21,16 @@ header {
 header .encabezado ul a:hover {
     background-color: #00ffff;
     color: #1e1e2f;
+}
+
+.presentacion_link {
+    flex-direction: column;
+    justify-content: center;
+}
+
+a.presentacion_link {
+    position: relative;
+    top: 0;
 }
 
 main {
@@ -42,50 +57,51 @@ button.btn:hover {
     border: 0.5px solid #00ffff;
 }
 
-.server-list {
-    margin: 20px 0;
-    padding: 10px;
-    background-color: #2c2c44;
-    border-radius: 10px;
-}
-
-.server-list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.server-item {
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #383850;
+#server-select {
+    height: 10%;
+    width: 345px;
     border-radius: 5px;
-    cursor: pointer;
-    text-align: left;
+    position: absolute;
+    bottom: 55%;
 }
 
-.server-item:hover {
-    background-color: #00ffff;
-    color: #1e1e2f;
+#login-discord {
+    position: absolute;
+    top: 57%;
 }
 
-.server-dropdown {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    cursor: pointer;
+#login-message {
+    position: absolute;
+    top: 53%;
 }
 
-.server-dropdown:hover {
-    background-color: #e6e6e6;
+
+#user-info {
+    height: 350px;
+    width: 55rem;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    bottom: 130px;
 }
 
-.user-avatar {
+#user-avatar {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    right: 0;
+}
+
+
+#user-name {
+    font-family: 'Arial';
+    text-shadow: 0.5px 0.2px 2px  red;
+    margin-top: 10px;
+    font-size: 24px;
+    flex-direction: row-reverse;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }

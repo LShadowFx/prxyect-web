@@ -6,6 +6,7 @@ const urlParms = new URLSearchParams(window.location.search);
 const token = urlParms.get('token');
 
 if (token) {
+    
     document.getElementById('login-discord').style.display = 'none';
     document.getElementById('login-message').style.display = 'none';
 
@@ -18,6 +19,7 @@ if (token) {
     })
     .then(response => response.json())
     .then(user => {
+        alert('Seccion en desarrollo')
         // Mostrar datos del usuario
         const userInfo = document.getElementById('user-info');
         document.getElementById('user-avatar').src = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`;
@@ -37,19 +39,24 @@ if (token) {
     })
     .then(response => response.json())
     .then(guilds => {
+
         // Mostrar lista de servidores en un menú desplegable
+        
         const serverSelect = document.getElementById('server-select');
         guilds.forEach(guild => {
-            const option = document.createElement('option');
-            option.value = guild.id;
-            option.textContent = guild.name;
-            serverSelect.appendChild(option);
+            serverSelect.add(
+                new Option(guild.name, guild.id, false)
+            );
         });
+        
+        // Muestra la información
+        document.getElementById('user-info').style.display = 'block';
         document.getElementById('server-list-container').style.display = 'block';
     })
     .catch(error => {
         console.error('Error al obtener los servidores:', error);
     });
+
 } else {
     document.getElementById('login-discord').style.display = 'block';
 }
