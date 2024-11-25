@@ -54,8 +54,8 @@ if (token) {
         // Muestra la información
         document.getElementById('user-info').style.display = 'block';
         document.getElementById('server-select').style.display = 'block';
-
-        
+        document.getElementById('user-name').style.display = 'block';
+        document.getElementById('user-avatar').style.display = 'block';
     })
     .catch(error => {
         console.error('Error al obtener los servidores:', error);
