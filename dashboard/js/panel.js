@@ -1,7 +1,7 @@
 // Crear constantes
 const loginDiscord = document.getElementById('login-discord');
 const loginMessage = document.getElementById('login-message');
-const butonLogin = document.getElementById('buton-login');
+const butonLogin = document.getElementsByClassName('button-login');
 const logoutText = document.getElementById('log-out-text');  
 const logoutImg = document.getElementById('log-out-img');
 const serverSelect = document.getElementById('server-select');
@@ -11,6 +11,7 @@ const displayOptions = document.getElementById('server-options');
 loginDiscord.addEventListener('click', function () {
     window.location.href = 'https://lproyect-sv.vercel.app/login';
 });
+
 
 butonLogin.addEventListener('click', function () {
     window.location.href = 'https://lproyect-sv.vercel.app/login';
