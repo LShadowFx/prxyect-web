@@ -87,9 +87,10 @@ if (token) {
     document.getElementById('login-discord').style.display = 'block';
 
     if (logoutText) {
-        logoutText.addEventListener('click', function () {
-            const url = new URL(window.location.href);
+        logoutText.addEventListener('click', function (event) {
+            event.preventDefault();
 
+            const url = new URL(window.location.href);
             url.searchParams.delete('token');
 
             window.location.href = url.toString();
