@@ -5,6 +5,7 @@ const butonLogin = document.getElementById('buton-login');
 const logoutText = document.getElementById('log-out-text');  
 const logoutImg = document.getElementById('log-out-img');
 const serverSelect = document.getElementById('server-select');
+alert('Seccion en desarrollo')
 
 // log in 
 loginDiscord.addEventListener('click', function () {
@@ -49,7 +50,6 @@ if (token) {
     })
     .then(response => response.json())
     .then(user => {
-        alert('Seccion en desarrollo')
         // Mostrar datos del usuario
     if (user.avatar) {
         
