@@ -1,16 +1,44 @@
-document.getElementById('login-discord').addEventListener('click', function () {
+// Crear constantes
+const loginDiscord = document.getElementById('login-discord');
+const loginMessage = document.getElementById('login-message');
+const butonLogin = document.getElementById('buton-login');
+const logoutText = document.getElementById('log-out-text');  
+const logoutImg = document.getElementById('log-out-img');
+const serverSelect = document.getElementById('server-select');
+
+// log in 
+loginDiscord.addEventListener('click', function () {
     window.location.href = 'https://lproyect-sv.vercel.app/login';
 });
+
+butonLogin.addEventListener('click', function () {
+    window.location.href = 'https://lproyect-sv.vercel.app/login';
+})
 
 const urlParms = new URLSearchParams(window.location.search);
 const token = urlParms.get('token');
 
 if (token) {
 
-    // Ocultar datos despues de obtener token
-    document.getElementById('login-discord').style.display = 'none';
-    document.getElementById('login-message').style.display = 'none';
-    
+    loginDiscord.addEventListener('click', function () {
+        loginDiscord.style.display = 'none';
+        loginMessage.style.display = 'none';
+        butonLogin.style.display = 'none';
+        
+        serverSelect.style.display = 'block';
+        logoutText.style.display = 'block';
+        logoutImg.style.display = 'block';
+    })
+
+    butonLogin.addEventListener('click', function () {
+        loginDiscord.style.display = 'none';
+        loginMessage.style.display = 'none';
+        butonLogin.style.display = 'none';
+        
+        serverSelect.style.display = 'block';
+        logoutText.style.display = 'block';
+        logoutImg.style.display = 'block';
+    });
 
     // Fetch para obtener datos del usuario
     fetch('https://discord.com/api/v10/users/@me', {
@@ -23,10 +51,14 @@ if (token) {
     .then(user => {
         alert('Seccion en desarrollo')
         // Mostrar datos del usuario
-        const userInfo = document.getElementById('user-info');
-        document.getElementById('user-avatar').src = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`;
-        document.getElementById('user-welcome').innerText = `Bienvenido ${user.username}!`;
-        userInfo.style.display = 'block';
+    if (user.avatar) {
+        
+        const avatarURL = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`
+        logoutImg.src= avatarURL;
+        
+    } else {
+            logoutImg.src = "https://cdn.discordapp.com/embed/avatars/0.png"
+        }
     })
     .catch(error => {
         console.error('Error al obtener datos del usuario:', error);
@@ -42,20 +74,18 @@ if (token) {
     .then(response => response.json())
     .then(guilds => {
 
-        // Mostrar lista de servidores en un menú desplegable
-        
-        const serverSelect = document.getElementById('server-select');
         guilds.forEach(guild => {
             serverSelect.add(
                 new Option(guild.name, guild.id, false)
             );
         });
+
+        const displayOptions = document.getElementById('server-options');
+        serverSelect.addEventListener('change', (event) => {
+
+            displayOptions.style.display = 'block';
+        })
         
-        // Muestra la información
-        document.getElementById('user-info').style.display = 'block';
-        document.getElementById('server-select').style.display = 'block';
-        document.getElementById('user-name').style.display = 'block';
-        document.getElementById('user-avatar').style.display = 'block';
     })
     .catch(error => {
         console.error('Error al obtener los servidores:', error);

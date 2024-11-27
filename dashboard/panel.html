@@ -8,19 +8,27 @@
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="./panel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
-<body>
+<body>  
     <header>
         <div class="encabezado">
             <ul>
-                <a class="encabezado_home" href="../index.html">Inicio</a>
-                <a class="encabezado_dashboard" href="../dashboard/panel.html">Dashboard</a>
-                <a class="encabezado_comandos" href="../cmd/commands.html">Comandos</a>
+                <a class="encabezado_" href="../index.html">Inicio</a>
+                <a class="encabezado_" href="../dashboard/panel.html">Dashboard</a>
+                <a class="encabezado_" href="../cmd/commands.html">Comandos</a>
             </ul>
             <nav class="nav">
-            <a class="presentacion_link" href="https://discord.gg/8dwVxfBRbQ"><i id="fa-solid-head" class="fa-solid fa-headset"></i>Soporte</a>
-            <a class="presentacion_link" href="../politicas/es.html"><i id="fa-solid-policy" class="fa-solid fa-user-lock"></i>Politicas</a>
-            <a class="presentacion_link" href="../terminos/es.html"><i id="fa-solid-book" class="fa-solid fa-book"></i>Términos</a>
+            <a class="presentacion_link" href="https://discord.gg/8dwVxfBRbQ"><i id="fa-solid-head" class="fa-solid fa-headset"></i><span class="up-text">Soporte</span></a>
+            <a class="presentacion_link"  href="../politicas/es.html"><i id="fa-solid-policy" class="fa-solid fa-user-lock"></i><span class="up-text">Políticas</span></a>
+            <a class="presentacion_link" href="../terminos/es.html"><i id="fa-solid-book" class="fa-solid fa-book"></i><span class="up-text">Términos</span></a>
+        
+            <a id="buton-login" href="https://lproyect-sv.vercel.app/login" class="button-login" style="display: block;">Iniciar Sesión</a>
+            
+
+            <a href="" id="log-out-text" class="button-login" style="display: none; color: #EE1111;">Cerrar Sesión</a>
+            <img id="log-out-img" style="display: none;" alt="Perfil-img">
+
             </nav>
         </div>
     </header>
@@ -29,27 +37,25 @@
         <section class="dashboard">
             <h1>Selecciona un servidor</h1>
 
-            <div id="user-info">
-
-                <select name="Select" style="display: none;" id="server-select"></select>
-                <h3 id="user-name" style="display: none;"></h3>
-                <img id="user-avatar" style="display: none;" alt="Avatar">
-            </div>
-
             <p id="login-message" style="display: block;">Inicia sesión con Discord antes de continuar.</p>
 
             <button id="login-discord" class="btn" style="display: block;">Iniciar sesión con Discord</button>
 
+            <select name="Select" id="server-select" style="display: none;"></select>
     
             <div id="server-options" style="display: none;">
                 <h2>Opciones del servidor</h2>
-                <p>Configura las opciones del bot para este servidor:</p>
+                <p class="btn">Configura las opciones del bot para este servidor:</p>
                 <button class="btn">Gestionar playlists</button>
                 <button class="btn">Configurar roles</button>
                 <button class="btn">Ver estadísticas</button>
+
+                <p id="resultado" style="display: none;"></p>
             </div>
+
         </section>
     </main>
+
     <script src="./js/panel.js"></script>
 </body>
 </html>
