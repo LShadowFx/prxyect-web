@@ -1,21 +1,24 @@
 // Crear constantes
 const loginDiscord = document.getElementById('login-discord');
 const loginMessage = document.getElementById('login-message');
-const butonLogin = document.getElementsByClassName('button-login');
-const logoutText = document.getElementById('log-out-text');  
+const buttonLogin = document.getElementById('buton-login');
+const logoutText = document.getElementById('log-out-text');
 const logoutImg = document.getElementById('log-out-img');
 const serverSelect = document.getElementById('server-select');
 const displayOptions = document.getElementById('server-options');
 
 // log in
-loginDiscord.addEventListener('click', function () {
-    window.location.href = 'https://lproyect-sv.vercel.app/login';
-});
+if (loginDiscord) {
+    loginDiscord.addEventListener('click', function () {
+        window.location.href = 'https://lproyect-sv.vercel.app/login';
+    });
+}
 
-
-butonLogin.addEventListener('click', function () {
-    window.location.href = 'https://lproyect-sv.vercel.app/login';
-});
+if (buttonLogin) {
+    buttonLogin.addEventListener('click', function () {
+        window.location.href = 'https://lproyect-sv.vercel.app/login';
+    });
+}
 
 const urlParms = new URLSearchParams(window.location.search);
 const token = urlParms.get('token');
@@ -24,7 +27,7 @@ if (token) {
 
     loginDiscord.style.display = 'none';
     loginMessage.style.display = 'none';
-    butonLogin.style.display = 'none';
+    buttonLogin.style.display = 'none';
     
     serverSelect.style.display = 'block';
     logoutText.style.display = 'block';
