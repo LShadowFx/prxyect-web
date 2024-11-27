@@ -88,11 +88,6 @@ if (token) {
 
     if (logoutText) {
         logoutText.addEventListener('click', function (event) {
-            event.preventDefault();
-
-            const url = new URL(window.location.href);
-            url.searchParams.delete('token');
-
-            window.location.href = url.toString();
+            window.location.href = '../../index.html';
         });
 }};
