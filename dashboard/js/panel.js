@@ -5,9 +5,9 @@ const butonLogin = document.getElementById('buton-login');
 const logoutText = document.getElementById('log-out-text');  
 const logoutImg = document.getElementById('log-out-img');
 const serverSelect = document.getElementById('server-select');
-alert('Seccion en desarrollo')
+const displayOptions = document.getElementById('server-options');
 
-// log in 
+// log in
 loginDiscord.addEventListener('click', function () {
     window.location.href = 'https://lproyect-sv.vercel.app/login';
 });
@@ -80,7 +80,6 @@ if (token) {
             );
         });
 
-        const displayOptions = document.getElementById('server-options');
         serverSelect.addEventListener('change', (event) => {
 
             displayOptions.style.display = 'block';
