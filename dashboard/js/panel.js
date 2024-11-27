@@ -91,4 +91,4 @@ if (token) {
             const currentUrl = window.location.origin + window.location.pathname;
             window.location.href = currentUrl;
         });
-}
+}}
