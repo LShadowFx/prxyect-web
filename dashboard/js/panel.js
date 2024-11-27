@@ -84,4 +84,11 @@ if (token) {
 
 } else {
     document.getElementById('login-discord').style.display = 'block';
+
+    if (logoutText) {
+        logoutText.addEventListener('click', function () {
+            
+            const currentUrl = window.location.origin + window.location.pathname;
+            window.location.href = currentUrl;
+        });
 }
