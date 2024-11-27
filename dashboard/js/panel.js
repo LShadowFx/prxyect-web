@@ -8,6 +8,7 @@ const serverSelect = document.getElementById('server-select');
 const displayOptions = document.getElementById('server-options');
 
 // log in
+
 if (loginDiscord) {
     loginDiscord.addEventListener('click', function () {
         window.location.href = 'https://lproyect-sv.vercel.app/login';
@@ -87,8 +88,7 @@ if (token) {
 
     if (logoutText) {
         logoutText.addEventListener('click', function () {
-            
             const currentUrl = window.location.origin + window.location.pathname;
-            window.location.href = currentUrl;
+            window.history.replaceState({}, document.title, currentUrl);
         });
-}}
+}};
