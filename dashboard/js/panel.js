@@ -14,32 +14,20 @@ loginDiscord.addEventListener('click', function () {
 
 butonLogin.addEventListener('click', function () {
     window.location.href = 'https://lproyect-sv.vercel.app/login';
-})
+});
 
 const urlParms = new URLSearchParams(window.location.search);
 const token = urlParms.get('token');
 
 if (token) {
 
-    loginDiscord.addEventListener('click', function () {
-        loginDiscord.style.display = 'none';
-        loginMessage.style.display = 'none';
-        butonLogin.style.display = 'none';
-        
-        serverSelect.style.display = 'block';
-        logoutText.style.display = 'block';
-        logoutImg.style.display = 'block';
-    })
-
-    butonLogin.addEventListener('click', function () {
-        loginDiscord.style.display = 'none';
-        loginMessage.style.display = 'none';
-        butonLogin.style.display = 'none';
-        
-        serverSelect.style.display = 'block';
-        logoutText.style.display = 'block';
-        logoutImg.style.display = 'block';
-    });
+    loginDiscord.style.display = 'none';
+    loginMessage.style.display = 'none';
+    butonLogin.style.display = 'none';
+    
+    serverSelect.style.display = 'block';
+    logoutText.style.display = 'block';
+    logoutImg.style.display = 'block';
 
     // Fetch para obtener datos del usuario
     fetch('https://discord.com/api/v10/users/@me', {
