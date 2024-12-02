@@ -1,3 +1,6 @@
 {
-    "discord.enabled": true
+    "discord.enabled": true,
+    "discord.lowerDetailsEditing": "Espacio de Trabajo: {workspace}",
+    "discord.detailsEditing": "Editando {file_name}",
+    "discord.lowerDetailsNoWorkspaceFound": "Sin espacio de trabajo"
 }

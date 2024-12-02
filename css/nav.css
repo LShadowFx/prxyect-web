@@ -1,6 +1,8 @@
 html {
     background-color: #444;
     color: #fff;
+    margin: 0;
+    padding: 0; 
 }
 
 header {
@@ -39,6 +41,8 @@ ul {
 .encabezado {
     width: 100%;
     height: 3.4em;
+    display: flex;
+    flex-direction: row;
 }
 
 .encabezado_ {
@@ -56,9 +60,10 @@ ul {
 
 .encabezado_:hover {
     font-weight: bold;
-    background-color: #222;
+    background-color: #111;
     margin: 0 15px;
-    color: #F00F;
+    color: rgb(255, 27, 27);
+    text-shadow: 0.5px 0.3px 0.1px;
     padding: 10px 28px;
     border-radius: 5px 26px;
     border: 0.5px solid #AAA;
@@ -73,7 +78,7 @@ ul {
     display: flex;
     flex-direction: column;
     padding: 9px 30px;
-    margin: auto 6px;
+    margin: auto 8px;
     text-decoration: none;
     color: #0f0A;
     font-weight: bold;
@@ -87,16 +92,16 @@ ul {
     border: 1px solid #AAA;
     color: #0f0F;
     font-weight: bold;
-    background-color: #222;
+    background-color: #111;
 }
 
 #log-out-img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     position: relative;
     padding: 3px;
-    margin: 3px 5px;
+    margin: 4px;
 }
 
 #fa-solid-policy, #fa-solid-head, #fa-solid-book {
@@ -110,10 +115,10 @@ ul {
     display: flex;
     text-decoration: none;
     color: #1CC197;
-    padding: 0 33px;
-    transition: all 0.5s;
+    padding: 0 41px;
+    transition: all 0.3s;
     flex-direction: column;
-    margin: 6px;
+    margin: 7px;
     position: relative;
     border: 1px solid #333;
     border-radius: 1px 25px;
@@ -125,11 +130,11 @@ ul {
 }
 
 .presentacion_link:hover {
-    color: #1CC197;
+    color: #11e8b2;
     text-decoration: double;
     border-radius: 3px 25px;
     border: 1px solid #AAA;
     padding: 0 46px;
-    background-color: #222;
+    background-color: #111;
     font-weight: bold;
 }

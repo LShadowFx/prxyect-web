@@ -28,30 +28,29 @@
 
             <a href="" id="log-out-text" class="button-login" style="display: none; color: #EE1111;">Cerrar Sesión</a>
             <img id="log-out-img" style="display: none;" alt="Perfil-img">
-
             </nav>
         </div>
     </header>
         
     <main>
-        <section class="dashboard">
+        <section id="dashboard">
+            <div class="dashboard_">
             <h1>Selecciona un servidor</h1>
-
             <p id="login-message" style="display: block;">Inicia sesión con Discord antes de continuar.</p>
 
             <button id="login-discord" class="btn" style="display: block;">Iniciar sesión con Discord</button>
 
-            <select name="Select" id="server-select" style="display: none;"></select>
+            <select name="Select" id="server-select" style="display: none;">
+                <option value="" disabled selected></option>
+            </select>
     
             <div id="server-options" style="display: none;">
-                <p class="btn">Configura las opciones del bot para este servidor:</p>
-                <button class="btn">Configuraciones</button>
-                <button class="btn">Panel de Musica</button>
-                <button class="btn">Ver estadísticas</button>
+                <p class="btn" id="btn-text">Configura las opciones del bot para este servidor:</p>
+                <button class="btn" id="musica-btn">Panel de Musica</button>
 
-                <p id="resultado" style="display: none;"></p>
             </div>
 
+        </div>
         </section>
     </main>
 

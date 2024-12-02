@@ -6,7 +6,3 @@ function toggleVisibility(elementId) {
         element.style.display = "none";
     }
 }
-
-function toggleModoOscuro(elementId) {
-    document.body.classList.toggle('modo-oscuro');
-}

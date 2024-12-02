@@ -3,22 +3,73 @@ body, html {
     background-color: #1e1e2f;
     color: #f5f5f5;
     margin: 0;
-    height: 100%;
+    padding: 0; 
+    overflow: hidden; 
     display: flex;
     flex-direction: column;
 }
 
-.encabezadao {
-    display: flex;
-    flex-direction: row;
+#dashboard {
+    width: 100%;
 }
 
-main {
-    flex: 1;
-    padding: 170px 15%;
-    text-align: top;
+.dashboard_ {
+    background-color: #111;
+    border-radius: 25px;
+    border: 0.1px solid #f44;
+    box-shadow: 1.2px 1.4px 5px #c00;
+    padding: 50px;
+    margin: 100px;
 }
 
+#server-select {
+    width: 350px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #333;
+    border-radius: 10px;
+    border: 1px solid #00cccc;
+    color: #fff;
+    border-color: #111;
+    cursor: pointer;
+    padding: 5px 10px;
+    appearance: none;
+    transition: all 1s ease;
+}
+
+#server-select:focus {
+    border-color: #00b3b3;
+    color: #fff;
+}
+
+#server-select::after {
+    content: '▼'; /* Usamos el símbolo de flecha hacia abajo */
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Ajusta la distancia del borde derecho */
+    transform: translateY(-50%);
+    color: #fff; /* Color de la flecha */
+}
+
+#server-select option {
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#server-select option:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+/* boton login */
+
+#login-discord:hover {
+    background-color: #00cccc;
+    color: #000;
+}
 
 button.btn {
     background-color: #3a3a3a;
@@ -33,35 +84,7 @@ button.btn {
 }
 
 button.btn:hover {
-    background-color: #00CCCC;
+    background-color: #0CC;
     color: #FFF;
     padding: 10px 40px;
-}
-
-#server-select {
-    height: 6%;
-    width: 350px;
-    border-radius: 5px;
-    position: absolute;
-    bottom: 42%;
-}
-
-#login-discord {
-    position: absolute;
-    top: 55%;
-}
-
-#login-discord:hover {
-    color: #000;
-    padding: 10px 24px;
-}
-
-#login-message {
-    position: absolute;
-    top: 51%;
-}
-
-#server-options {
-    position: absolute;
-    bottom: 24%;
 }
