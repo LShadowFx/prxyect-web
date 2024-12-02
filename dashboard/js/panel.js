@@ -117,7 +117,7 @@ function verifyAuthToken(authToken) {
     if (logoutText) {
         logoutText.addEventListener('click', function () {
             localStorage.removeItem('authToken'); // Eliminar el token
-            window.location.href = 'https://';  // Redirigir al login
+            window.location.href = 'https://lproyect-sv.vercel.app/logout';  // Redirigir al login
         });
     }
 } else { 
