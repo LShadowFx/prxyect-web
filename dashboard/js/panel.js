@@ -10,7 +10,7 @@ window.addEventListener('load', function () {
     } else {
         const authToken = localStorage.getItem('authToken');
         verifyAuthToken(authToken);  
-    }
+    }   
 });
 
 // Si el token existe, el usuario ya está autenticado
@@ -64,22 +64,13 @@ function verifyAuthToken(authToken) {
         }
     })
     .then(response => response.json())
-    .then(guilds => {
+    .then(async guilds => {
 
 
-        guilds.forEach(guild => {
-            serverSelect.add(new Option(guild.name, guild.id, true));
-        });
-
-        async function checkBotInServer(serverId) {
-            try {
-                const response = await fetch(`https://lproyect-sv.vercel.app/api/check-bot/${serverId}`);
-                const data = await response.json();
-
-                return data.botInServer;
-            } catch (error) {
-                console.error('Error al verificar si el bot está en el servidor:', error);
-                return false;
+        for (const guild of guilds) {
+            const botInSV = await checkBotInServer(guild.id);
+            if (botInSV) {
+                serverSelect.add(new Option(guild.name, guild.id));
             }
         }
 
@@ -142,4 +133,17 @@ function verifyAuthToken(authToken) {
             window.location.href = 'https://lproyect-sv.vercel.app/login'
         })
     }}
+}
+
+async function checkBotInServer(serverId) {
+    try {
+        const response = await fetch(`https://lproyect-sv.vercel.app/api/check-bot/${serverId}`);
+        
+        
+        const data = await response.json();
+        return data.botInServer;
+    } catch (error) {
+        console.error('Error al verificar si el bot está en el servidor:', error);
+        return false;
+    }
 }
