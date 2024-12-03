@@ -66,13 +66,27 @@ function verifyAuthToken(authToken) {
     .then(response => response.json())
     .then(async guilds => {
 
-
-        for (const guild of guilds) {
-            const botInSV = await checkBotInServer(guild.id);
-            if (botInSV) {
-                serverSelect.add(new Option(guild.name, guild.id));
+        async function loadServers(guilds) {
+            try {
+                // Mapea las solicitudes de verificación en una lista de promesas
+                const promises = guilds.map(guild => checkBotInServer(guild.id).then(botInSV => ({ guild, botInSV })));
+        
+                // Espera a que todas las solicitudes se completen
+                const results = await Promise.all(promises);
+        
+                // Filtra y agrega solo los servidores donde el bot está presente
+                results.forEach(({ guild, botInSV }) => {
+                    if (botInSV) {
+                        serverSelect.add(new Option(guild.name, guild.id));
+                    }
+                });
+            } catch (error) {
+                console.error('Error al cargar los servidores:', error);
             }
         }
+        
+        // Evento para cargar y mostrar servidores al inicio
+        loadServers(guilds);
 
         function enableOption(button) {
             button.disabled = false;
@@ -101,7 +115,7 @@ function verifyAuthToken(authToken) {
 
     if (musicbtn) {
         musicbtn.addEventListener('click', function () {
-            window.location.href = '../../views/player.html';  // Redirige al reproductor de música
+            window.location.href = '../../views/';  // Redirige al reproductor de música
         });
     }
 
@@ -135,12 +149,20 @@ function verifyAuthToken(authToken) {
     }}
 }
 
+// Almacenar el estado de los servidores en el cache
+const botStatusCache = new Map();
+
 async function checkBotInServer(serverId) {
+    if (botStatusCache.has(serverId)) {
+        return botStatusCache.get(serverId); // Devuelve el resultado cacheado
+    }
+
     try {
         const response = await fetch(`https://lproyect-sv.vercel.app/api/check-bot/${serverId}`);
         
         
         const data = await response.json();
+        botStatusCache.set(serverId, data.botInServer)
         return data.botInServer;
     } catch (error) {
         console.error('Error al verificar si el bot está en el servidor:', error);
