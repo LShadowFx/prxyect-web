@@ -101,7 +101,7 @@ function verifyAuthToken(authToken) {
 
     if (musicbtn) {
         musicbtn.addEventListener('click', function () {
-            window.location.href = '../../views/boardmusic/player.html';  // Redirige al reproductor de música
+            window.location.href = '../../views/player.html';  // Redirige al reproductor de música
         });
     }
 
