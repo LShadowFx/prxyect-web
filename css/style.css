@@ -1,7 +1,11 @@
 body, html {
     margin: 0;
     padding: 0; 
-    background-color: #1e1e2f;
+    background-image: url(./background/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
 }
 
 #main {
@@ -18,7 +22,6 @@ h6 {
     text-shadow: 1.2px 1.2px 3px #fff;
     font-family: sans-serif;
     margin: 7px;
-    
 }
 
 .title, h6 {
@@ -53,9 +56,6 @@ h6 {
     padding: 5px 0;
 }
 
-
-
-
 .text {
     text-align: center;
     position: relative;
@@ -69,9 +69,9 @@ h6 {
     align-items: flex-start;    
     position: relative;
     width: 80%;
-    border: 1px #222 solid;
-    box-shadow: 0 0 9px #fff;
-    border-radius: 5px;
+    border: 1px #111 solid;
+    box-shadow: 0 0 8px #555;
+    border-radius: 8px;
     background-color: #111;
     padding: 15px 25px;
     left: 90px;
@@ -106,17 +106,18 @@ h6 {
 }
 
 .content_button {
+    border: 1px solid #fff;
     font-family: sans-serif;
     color: #fff;
     font-size: 15px;
-    font-weight: 400;
     position: relative;
     cursor: pointer;
-    margin: 20px 10px;
+    margin: 10px 20px;
     height: 40px;
     width: 250px;
-    border-radius: 20px;
-    background-color: #a22;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: all 0.2s;
 }
 
 .a_content {
@@ -124,20 +125,12 @@ h6 {
 }
 
 .content_button:hover {
-    background-color: #1fe9;
+    background-color: #fff;
     color: #000;
-    border-radius: 20px;
+    border-radius: 5px;
+    border: 1px solid #fff;
 }
 
-.content_footer {
-    background-color:#333;
-    margin: 0;
-    height: 60px;
-    width: 100%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-}
 
 h3 {
     font-family: Geneva, Tahoma, sans-serif;
